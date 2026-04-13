@@ -13,6 +13,7 @@
 param([int]$Port = 8080)
 
 # ── CONFIG ───────────────────────────────────────────────────────
+# es una api key de prueba. honestamente, si ves esto, puedes utilzarla, pero no me lo gastes mucho porfa
 $OLLAMA_API_KEY = "9c18372f50a647908ea90588c5e0fdd2.U5AnkkJ2TYa8zoA05W_65Xcf"
 $OLLAMA_API_URL = "https://ollama.com/api/chat"
 
@@ -229,7 +230,8 @@ try {
                 }
                 try {
                     $resProxy = Invoke-WebRequest -Uri $targetUrl -Method Post -Body $body -Headers $headers -ContentType "application/json"
-                    Send-Bytes $res 200 "application/json; charset=utf-8" $resProxy.Content
+                    $responseBytes = [Text.Encoding]::UTF8.GetBytes($resProxy.Content)
+                    Send-Bytes $res 200 "application/json; charset=utf-8" $responseBytes
                     Write-Host "  [CHAT] OK" -ForegroundColor Green
                 } catch {
                     $statusCode = 502
