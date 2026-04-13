@@ -230,7 +230,7 @@ try {
                 }
                 try {
                     $resProxy = Invoke-WebRequest -Uri $targetUrl -Method Post -Body $body -Headers $headers -ContentType "application/json"
-                    $responseBytes = [Text.Encoding]::UTF8.GetBytes($resProxy.Content)
+                    $responseBytes = $resProxy.RawContentStream.ToArray()
                     Send-Bytes $res 200 "application/json; charset=utf-8" $responseBytes
                     Write-Host "  [CHAT] OK" -ForegroundColor Green
                 } catch {
