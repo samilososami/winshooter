@@ -20,7 +20,7 @@ module.exports = function handler(req, res) {
 
   // Browser  →  serve landing page
   try {
-    const html = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf8');
+    const html = fs.readFileSync(path.join(process.cwd(), 'landing.html'), 'utf8');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.setHeader('Cache-Control', 'no-cache');
     res.status(200).send(html);
