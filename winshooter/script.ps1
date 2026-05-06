@@ -14,7 +14,7 @@ param([int]$Port = 8080)
 
 # ── CONFIG ───────────────────────────────────────────────────────
 # es una api key de prueba. honestamente, si ves esto, puedes utilzarla, pero no me lo gastes mucho porfa
-$OLLAMA_API_KEY = "9c18372f50a647908ea90588c5e0fdd2.U5AnkkJ2TYa8zoA05W_65Xcf"
+$OLLAMA_API_KEY = "7bd3caed091b44dd86a1adb288aaaaed.rDXC7DZpk44Eh6gYNWaNDDgI"
 $OLLAMA_API_URL = "https://ollama.com/api/chat"
 
 # TLS 1.2 obligatorio para HTTPS
